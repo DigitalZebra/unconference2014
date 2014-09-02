@@ -18,3 +18,20 @@
 .reveal section.jekyll img {
     background-color: #333333;
 }
+
+.nocenter {
+    text-align: left;
+}
+
+.reveal dd {
+    margin-left: 40px;
+}
+
+p.problem {
+    margin-top: 20px;
+}
+
+/*.reveal ul li {*/
+    /*margin-top: .25em;*/
+    /*margin-bottom: .75em;*/
+/*}*/
