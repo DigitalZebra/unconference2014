@@ -1,7 +1,20 @@
 .reveal {
-    font-size: 40px;
+    font-size: 36px;
 }
 
 .reveal section img {
     border: none;
+}
+
+.reveal .git blockquote {
+    width: 90%;
+}
+
+.reveal .git > *:not(:first-child) {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.reveal section.jekyll img {
+    background-color: #333333;
 }

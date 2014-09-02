@@ -81,13 +81,13 @@
     </ol>
 </section>
 
-<section>
+<section class="git">
     <h2>Git</h2>
     <blockquote cite="http://git-scm.com">
         &ldquo;Git is a free and open source distributed version control system designed to handle everything from small
         to very large projects with speed and efficiency.&rdquo;
     </blockquote>
-    <p>The Git ecosystem is what we'll be using to publish changes to our websites and blog.</p>
+    <p>The <strong>Git</strong> ecosystem is what we'll be using to publish changes to our websites and blog.</p>
     <a class="image" href="http://lab.hakim.se/meny/" target="_blank">
         <img src="http://git-scm.com/images/logo@2x.png" width="110" height="46" alt="Git">
     </a>
@@ -96,9 +96,33 @@
 <section>
     <h2>GitHub</h2>
 
-    <p>Popular website for managing open source projects based on Git.</p>
+    <ul>
+        <li>Popular website for managing open source projects</li>
+        <li>Uses Git as its foundation</li>
+        <li>GitHub will be hosting our blog and websites</li>
+    </ul>
+    <a href="//github.com">
+        <img width="200" src="/img/Octocat.png"/>
+    </a>
+</section>
 
-    <p></p>
+<section class="jekyll">
+    <h2>Jekyll</h2>
+
+    <ul>
+        <li>Static content generator - Generates static files from code Markdown, YAML, and Liquid</li>
+        <li>Has built in blog functionality</li>
+        <li>Write your blog using HTML and Markdown, without all the extras</li>
+        <li>Plugin infrastructure allows extendability</li>
+    </ul>
+    <pre><code class="hljs bash" contenteditable>
+        ~ $ jekyll new site-name
+        ~ $ cd site-name
+        ~ $ jekyll serve
+    </code></pre>
+    <a href="//jekyllrb.com">
+        <img width="200" src="http://jekyllrb.com/img/logo-2x.png"/>
+    </a>
 </section>
 
 <section>
