@@ -15,10 +15,6 @@
     margin-bottom: 1em;
 }
 
-.reveal section.jekyll img {
-    background-color: #333333;
-}
-
 .nocenter {
     text-align: left;
 }
@@ -31,10 +27,37 @@ p.problem {
     margin-top: 20px;
 }
 
-.reveal .solution img {
+.reveal img.ghpageslogo {
     background: #333333;
-    padding: 20px;
+    padding: 20px 20px 10px 20px;
 }
+
+.reveal .darkbg {
+    background: #333333;
+}
+
+.reveal section .addition {
+    list-style-type: none;
+}
+
+.addition li {
+    float: left;
+    height: 150px;
+    text-align: center;
+    line-height: 150px;
+}
+
+.addition li > img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.addition .operand {
+    width: 70px;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
 
 /*.reveal ul li {*/
     /*margin-top: .25em;*/
