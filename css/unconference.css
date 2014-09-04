@@ -23,6 +23,10 @@
     margin-left: 40px;
 }
 
+.reveal dt {
+    margin-top: 30px;
+}
+
 p.problem {
     margin-top: 20px;
 }
