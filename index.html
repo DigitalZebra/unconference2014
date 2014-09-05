@@ -7,7 +7,7 @@
     <title>Using GitHub Pages and Jekyll / Eagan Unconference 2014</title>
 
     <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-    <meta name="author" content="Hakim El Hattab">
+    <meta name="author" content="Hakim El Hattab/Drew Gerber">
 
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
@@ -170,6 +170,7 @@
     <ul class="addition">
         <li class="fragment">
             <img class="darkbg" width="150" src="/img/jekyll-logo-2x.png"/>
+
             <div>(author)</div>
         </li>
         <li class="fragment operand">
@@ -177,6 +178,7 @@
         </li>
         <li class="fragment">
             <img src="http://git-scm.com/images/logo@2x.png" width="150" alt="Git">
+
             <div>(publish)</div>
         </li>
         <li class="fragment operand">
@@ -184,6 +186,7 @@
         </li>
         <li class="fragment">
             <img width="150" src="/img/Octocat.png"/>
+
             <div>(host)</div>
         </li>
         <li class="fragment operand">
@@ -212,7 +215,9 @@
     </code></pre>
 
     <p>GitHub also provides a wizard which does many of these manual steps for you.</p>
-    <p><code>CNAME</code> file tells GitHub which host routes to this project (you also need to configure a CNAME entry in your DNS record)</p>
+
+    <p><code>CNAME</code> file tells GitHub which host routes to this project (you also need to configure a CNAME entry
+        in your DNS record)</p>
 
     <aside class="notes">
         <p>Demo this using unconference test</p>
@@ -256,13 +261,13 @@
     <h2>Using Jekyll</h2>
     <h4>Directory Structure</h4>
     <pre><code class="hljs bash" contenteditable>
-        _drafts       # Where draft posts go
-        _includes     # Include files (eg. footer, header) go here. Think partial files.
-        _layouts      # Layout files go here. These can include content or partials.
-        _posts        # Your blog posts will go in here as Markdown or HTML files
-        _site         # This is the folder where Jekyll outputs all of the HTML files
-        _sass         # Sass files for site
-        _config.yml   # YAML based configuration file for Jekyll
+        _drafts # Where draft posts go
+        _includes # Include files (eg. footer, header) go here. Think partial files.
+        _layouts # Layout files go here. These can include content or partials.
+        _posts # Your blog posts will go in here as Markdown or HTML files
+        _site # This is the folder where Jekyll outputs all of the HTML files
+        _sass # Sass files for site
+        _config.yml # YAML based configuration file for Jekyll
     </code></pre>
 </section>
 
