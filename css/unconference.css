@@ -1,9 +1,14 @@
 .reveal {
-    font-size: 36px;
+    font-size: 34px;
 }
 
 .reveal section img {
     border: none;
+}
+
+.reveal li {
+    margin-top: .35em;
+    margin-bottom: .35em;
 }
 
 .reveal .git blockquote {
@@ -19,7 +24,7 @@
     text-align: left;
 }
 
-.reveal dd {
+.reveal .nocenter dd {
     margin-left: 40px;
 }
 
@@ -46,9 +51,11 @@ p.problem {
 
 .addition li {
     float: left;
-    height: 150px;
+    height: 140px;
     text-align: center;
-    line-height: 150px;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 140px;
 }
 
 .addition li > img {
@@ -60,6 +67,11 @@ p.problem {
     width: 70px;
     font-size: 1.8em;
     font-weight: 600;
+}
+
+.reveal .drawbacks div {
+    margin-left: 40px;
+    font-size: .8em;
 }
 
 

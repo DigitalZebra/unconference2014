@@ -52,7 +52,7 @@
                 href="http://twitter.com/DigitalZebra">@DigitalZebra</a></small>
     </p>
     <aside class="notes">
-        Is console blown up? Does theme look okay? What about resolution?
+        Is console font size turned up? What about resolution? Turn up WebStorm font size.
     </aside>
 </section>
 
@@ -96,7 +96,7 @@
     <img src="https://pages.github.com/images/logo.svg" width="250" class="fragment ghpageslogo"/>
 
     <div class="fragment">
-        <p>GitHub's answer to needing project and organization websites</p>
+        <p>GitHub's answer for projects and organizations needing websites</p>
 
         <blockquote cite="https://pages.github.com/">
             &ldquo;Websites for you and your projects&rdquo;
@@ -136,6 +136,7 @@
     <ul>
         <li>Popular website for managing open source projects</li>
         <li>Uses Git as its foundation</li>
+        <li>Offers many tools for collaborating on open source projects. A social network for code</li>
         <li>GitHub will be hosting our blog and websites</li>
     </ul>
     <a href="//github.com">
@@ -151,6 +152,7 @@
         <li>Has built in blog functionality</li>
         <li>Write your blog using HTML and Markdown, without all the extras</li>
         <li>Plugin infrastructure allows extendability</li>
+        <li>GitHub runs a Jekyll &ldquo;build&rdquo; command every time your changes are published</li>
     </ul>
     <pre><code class="hljs bash" contenteditable>
         ~ $ jekyll new site-name
@@ -167,19 +169,22 @@
 
     <ul class="addition">
         <li class="fragment">
-            <img src="http://git-scm.com/images/logo@2x.png" width="150" alt="Git">
+            <img class="darkbg" width="150" src="/img/jekyll-logo-2x.png"/>
+            <div>(author)</div>
         </li>
         <li class="fragment operand">
-            +
+            &gt;
+        </li>
+        <li class="fragment">
+            <img src="http://git-scm.com/images/logo@2x.png" width="150" alt="Git">
+            <div>(publish)</div>
+        </li>
+        <li class="fragment operand">
+            &gt;
         </li>
         <li class="fragment">
             <img width="150" src="/img/Octocat.png"/>
-        </li>
-        <li class="fragment operand">
-            +
-        </li>
-        <li class="fragment">
-            <img class="darkbg" width="150" src="/img/jekyll-logo-2x.png"/>
+            <div>(host)</div>
         </li>
         <li class="fragment operand">
             =
@@ -207,6 +212,7 @@
     </code></pre>
 
     <p>GitHub also provides a wizard which does many of these manual steps for you.</p>
+    <p><code>CNAME</code> file tells GitHub which host routes to this project (you also need to configure a CNAME entry in your DNS record)</p>
 
     <aside class="notes">
         <p>Demo this using unconference test</p>
@@ -219,27 +225,89 @@
 
 <section>
     <h2>Using Jekyll</h2>
+
+    <p>Jekyll consists of the following technologies:</p>
+    <ul>
+        <li><strong>YAML</strong> - for defining page metadata and variables</li>
+        <li><strong>Liquid</strong> - simple templating language used to generate posts</li>
+        <li><strong>Markdown</strong> - text-to-HTML conversion tool. Markdown syntax goes in, HTML comes out</li>
+        <li><strong>Ruby</strong> - what Jekyll itself is written in</li>
+    </ul>
+</section>
+
+
+<section>
+    <h2>Using Jekyll</h2>
     <h4>Creating and serving a new blog</h4>
 
+    <p>Once Jekyll is installed, simply run the following to create a new site and serve it:</p>
+    <pre><code class="hljs bash" contenteditable>
+        ~ $ jekyll new site-name
+        ~ $ cd site-name
+        ~ $ jekyll serve
+    </code></pre>
+    <aside class="notes">
+        Run Jekyll script and show how it's done
+        <p>Also, show what the generated _site folder looks like.</p>
+    </aside>
+</section>
 
+<section>
+    <h2>Using Jekyll</h2>
+    <h4>Directory Structure</h4>
+    <pre><code class="hljs bash" contenteditable>
+        _drafts       # Where draft posts go
+        _includes     # Include files (eg. footer, header) go here. Think partial files.
+        _layouts      # Layout files go here. These can include content or partials.
+        _posts        # Your blog posts will go in here as Markdown or HTML files
+        _site         # This is the folder where Jekyll outputs all of the HTML files
+        _sass         # Sass files for site
+        _config.yml   # YAML based configuration file for Jekyll
+    </code></pre>
 </section>
 
 <section>
     <h2>Using Jekyll</h2>
     <h4>Creating a new post</h4>
-</section>
 
-<section>
-    <h2>Using Jekyll</h2>
-    <h4>Using templates</h4>
+    <p>Creating a new post is as simple as adding a file to the <code>_posts</code> directory:</p>
+    <pre><code class="hljs" contenteditable>
+        _posts
+        - 2014-09-04-new-post.markdown
+    </code></pre>
+    <p>Sample Post:</p>
+    <pre><code class="hljs" contenteditable>
+        ---
+        layout: post
+        title: "This is my new post!"
+        date: 2014-09-04 20:25:30
+        categories: helloworld
+        ---
+        Hello world!
+    </code></pre>
+    <aside class="notes">
+        Steps to follow for adding new blog:
+        <ul>
+            <li>jekyll new .</li>
+            <li>fix .gitignore</li>
+            <li>fix highlighter, base domain, and base path in config.yml</li>
+            <li>jekyll serve</li>
+            <li>create blog post</li>
+        </ul>
+    </aside>
 </section>
 
 <section>
     <h2>Drawbacks</h2>
-    <ul>
-        <li class="fragment">Requires some technical know-how (i.e. coding)</li>
-        <li class="fragment">Jekyll is limited in what it can do: comments, tags, etc.</li>
-        <li class="fragment">Requires buy-in to GitHub (TODO: double check this)</li>
+    <ul class="drawbacks">
+        <li class="fragment">Requires some technical know-how (coding, Git)</li>
+        <li class="fragment">Jekyll is missing comments
+            <div>- Can be added using Disqus or similar</div>
+        </li>
+        <li class="fragment">Jekyll is missing analytics
+            <div>- Can be added using Google Analytics or similar</div>
+        </li>
+        <li class="fragment">Requires buy-in to GitHub for managing projects</li>
     </ul>
 </section>
 
@@ -255,6 +323,8 @@
         <dd><a href="https://pages.github.com/">pages.github.com</a></dd>
         <dt>Jeykll Homepage</dt>
         <dd><a href="http://jekyllrb.com/">jekyllrb.com</a></dd>
+        <dt>Guide for running Jekyll on Windows</dt>
+        <dd><a href="http://jekyll-windows.juthilo.com/">jekyll-windows.juthilo.com</a></dd>
     </dl>
 </section>
 
@@ -272,111 +342,6 @@
         </dl>
     </div>
 </section>
-
-
-<section id="themes">
-    <h2>Themes</h2>
-
-    <p>
-        Reveal.js comes with a few themes built in: <br>
-        <a href="?#/themes">Default</a> -
-        <a href="?theme=sky#/themes">Sky</a> -
-        <a href="?theme=beige#/themes">Beige</a> -
-        <a href="?theme=simple#/themes">Simple</a> -
-        <a href="?theme=serif#/themes">Serif</a> -
-        <a href="?theme=night#/themes">Night</a> <br>
-        <a href="?theme=moon#/themes">Moon</a> -
-        <a href="?theme=solarized#/themes">Solarized</a>
-    </p>
-
-    <p>
-        <small>
-            * Theme demos are loaded after the presentation which leads to flicker. In production you should load your
-            theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-        </small>
-    </p>
-</section>
-
-
-<section>
-    <h2>Clever Quotes</h2>
-
-    <p>
-        These guys come in two forms, inline: <q
-            cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-        &ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-    </p>
-    <blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-        &ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters
-        would
-        reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-    </blockquote>
-</section>
-
-<section>
-    <h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-                        function linkify( selector ) {
-                        if( supports3DTransforms ) {
-
-                        var nodes = document.querySelectorAll( selector );
-
-                        for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-                        var node = nodes[i];
-
-                        if( !node.className ) {
-                        node.className += ' roll';
-                        }
-                        }
-                        }
-                        }
-                    </code></pre>
-    <p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-</section>
-
-
-<section>
-    <section id="fragments">
-        <h2>Fragmented Views</h2>
-
-        <p>Hit the next arrow...</p>
-
-        <p class="fragment">... to step through ...</p>
-        <ol>
-            <li class="fragment"><code>any type</code></li>
-            <li class="fragment"><em>of view</em></li>
-            <li class="fragment"><strong>fragments</strong></li>
-        </ol>
-
-        <aside class="notes">
-            This slide has fragments which are also stepped through in the notes window.
-        </aside>
-    </section>
-    <section>
-        <h2>Fragment Styles</h2>
-
-        <p>There's a few styles of fragments, like:</p>
-
-        <p class="fragment grow">grow</p>
-
-        <p class="fragment shrink">shrink</p>
-
-        <p class="fragment roll-in">roll-in</p>
-
-        <p class="fragment fade-out">fade-out</p>
-
-        <p class="fragment highlight-red">highlight-red</p>
-
-        <p class="fragment highlight-green">highlight-green</p>
-
-        <p class="fragment highlight-blue">highlight-blue</p>
-
-        <p class="fragment current-visible">current-visible</p>
-
-        <p class="fragment highlight-current-blue">highlight-current-blue</p>
-    </section>
-</section>
-
 
 </div>
 
